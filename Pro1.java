@@ -15,6 +15,9 @@ public class Pro1 extends JFrame {
     //텍스트 필드 설정
     displayField = new JTextField();
     displayField.setPreferredSize(new Dimension(100, 100));
+    displayField.setFont(new Font("Arial", Font.BOLD, 28));
+    displayField.setBackground(Color.LIGHT_GRAY);
+
     displayField.setEditable(false); // 텍스트 팔드를 수정 불가능하게 설정
     add(displayField, BorderLayout.NORTH);
 
@@ -59,7 +62,6 @@ public class Pro1 extends JFrame {
 
             // 버튼에 따른 동작 정의
             switch (command) {
-
                 case "←":
                     String currentText = displayField.getText();
                     if (currentText.length() > 0) {
