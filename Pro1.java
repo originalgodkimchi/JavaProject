@@ -37,16 +37,8 @@ public class Pro1 extends JFrame {
         for (String label : buttonLabels) {
             JButton button = new JButton(label);
             button.setBackground(Color.WHITE);
-            if (label.equals("÷") || label.equals("CE") || label.equals("C") ||
-            label.equals("←") || label.equals("x") || label.equals("-") ||
-            label.equals("+") || label.equals("+/-") || label.equals(".") ||
-            label.equals("=")) {button.setForeground(Color.RED);
-            }
-
-            else {
-            button.setForeground(Color.BLACK);
-            }
-            button.addActionListener(new ButtonActionListener());  // 액션 리스너 추가
+            button.setForeground(label.matches("[÷x\\-+CE←=]") ? Color.RED : Color.BLACK);
+            button.addActionListener(new ButtonActionListener());
             buttonPanel.add(button);
         }
 
@@ -68,12 +60,12 @@ public class Pro1 extends JFrame {
             switch (command) {
                 case "CE":
                     displayField.setText("");  // 화면 숫자 지우기
-                    Pvp2 = "";  // 이전 입력 초기화
+                    Pvp2 = "";
                     break;
                 case "C":
                     displayField.setText("");  // 화면 숫자 지우기
-                    Pvp2 = "";  // 이전 입력 초기화
-                    Pvp1 = "";  // 연산자 초기화
+                    Pvp2 = "";
+                    Pvp1 = "";
                     break;
                 case "←":
                     String currentText = displayField.getText();
