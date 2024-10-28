@@ -36,7 +36,7 @@ public class Pro1 extends JFrame {
         // 버튼을 추가 및 배치
         for (String label : buttonLabels) {
             JButton button = new JButton(label);
-            button.setBackground(Color.WHITE);  // 버튼의 배경색 설정 (노란색)
+            button.setBackground(Color.WHITE);
             if (label.equals("÷") || label.equals("CE") || label.equals("C") ||
             label.equals("←") || label.equals("x") || label.equals("-") ||
             label.equals("+") || label.equals("+/-") || label.equals(".") ||
@@ -44,17 +44,21 @@ public class Pro1 extends JFrame {
             }
 
             else {
-            button.setForeground(Color.BLACK);  // 나머지 버튼은 파란색 텍스트
+            button.setForeground(Color.BLACK);
             }
             button.addActionListener(new ButtonActionListener());  // 액션 리스너 추가
             buttonPanel.add(button);
         }
 
         add(buttonPanel, BorderLayout.CENTER);  // 버튼 패널을 중앙에 배치
+
     }
 
     // 버튼 클릭 이벤트 처리
     private class ButtonActionListener implements ActionListener {
+        private String Pvp1 = ""; ///인용 https://velog.io/@lionjojo/JAVA-%EA%B3%84%EC%82%B0%EA%B8%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0-Lv.2
+        private String Pvp2 = "";
+
         @Override
         public void actionPerformed(ActionEvent e) {
             JButton clickedButton = (JButton) e.getSource();  // 클릭된 버튼
@@ -62,6 +66,15 @@ public class Pro1 extends JFrame {
 
             // 버튼에 따른 동작 정의
             switch (command) {
+                case "CE":
+                    displayField.setText("");  // 화면 숫자 지우기
+                    Pvp2 = "";  // 이전 입력 초기화
+                    break;
+                case "C":
+                    displayField.setText("");  // 화면 숫자 지우기
+                    Pvp2 = "";  // 이전 입력 초기화
+                    Pvp1 = "";  // 연산자 초기화
+                    break;
                 case "←":
                     String currentText = displayField.getText();
                     if (currentText.length() > 0) {
