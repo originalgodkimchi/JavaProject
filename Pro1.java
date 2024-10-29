@@ -74,6 +74,7 @@ public class Pro1 extends JFrame {
                         displayField.setText(currentText.substring(0, currentText.length() - 1));
                     }
                     break;
+                break;
                 case "÷":
                 case "x":
                 case "-":
@@ -96,7 +97,7 @@ public class Pro1 extends JFrame {
                     break;
                 case "=":
                     if (!Pvp2.isEmpty()) {
-                        compute(Pvp2, displayField.getText(), Pvp1);
+                        (Pvp2, displayField.getText(), Pvp1);
                     }
                     Pvp1 = "";  // 연산자 초기화
                     Pvp2 = "";  // 이전 입력 초기화
@@ -108,30 +109,7 @@ public class Pro1 extends JFrame {
             }
         }
     }
-    // 계산 메소드 추가
-    private void compute(String pvp2, String currentText, String operator) {
-        double num1 = Double.parseDouble(pvp2); // 첫 번째 숫자
-        double num2 = Double.parseDouble(currentText); // 두 번째 숫자
-        double result = 0; // 결과 저장을 위한 변수
 
-        // 연산자에 따른 조건문
-        switch (operator) {
-            case "÷":
-                result = num1 / num2;
-                break;
-            case "x":
-                result = num1 * num2;
-                break;
-            case "-":
-                result = num1 - num2;
-                break;
-            case "+":
-                result = num1 + num2;
-                break;
-        }
-        // 결과를 텍스트 필드에 표시
-        displayField.setText(String.valueOf(result));
-    }
     /**
      * @see
      * @param args
