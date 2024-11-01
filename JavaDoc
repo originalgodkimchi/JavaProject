@@ -152,7 +152,7 @@ public class Pro1 extends JFrame {
          * @param num2 두 번째 숫자
          * @param operator 연산자
          * @return 계산 결과
-         * @see #handleOperator(String) 연산자 처리에 대한 참고 (챗GPT 참고)
+         * @see #handleOperator(String) 연산자 처리 (챗GPT 참고)
          */
         private double compute(double num1, double num2, String operator) {
             switch (operator) {
